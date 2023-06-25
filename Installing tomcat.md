@@ -1,11 +1,23 @@
 # Install java 11 OpenJDK
-#sudo dnf install java-11-openjdk-devel
+You need to install the java-11-openjdk-devel package:
+```
+sudo dnf install java-11-openjdk-devel
+```
+Once it's installed, check the version of Java to ensure it has installed properly and is set as the default for the system.
+```
+java --version
+```
 
-# check the version of java 11 openJDK
-#java --version
-#wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.76/bin/apache-tomcat-9.0.76.tar.gz
-#ll
-# Become a root user
+# Obtain Tomcat version 9 from the Apache Tomcat Website
+[Go to the webpage to get the latest version of Tomcat 9:]
+
+(https://tomcat.apache.org/download-90.cgi)
+```
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.76/bin/apache-tomcat-9.0.76.tar.gz
+ll
+```
+# Become a root user and perform the below operation
+```
 #sudo -i
 #cd /usr/local
 #tar -xvf /home/cloud_user/Desktop/apache-tomcat-9.0.76.tar.gz

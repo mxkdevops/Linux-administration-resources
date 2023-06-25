@@ -23,11 +23,11 @@ FW zone
 
 #sudo -i # become root user
 # yum install -y epel-release
-#yum install -y openvpn
-#firewall-cmd --permanent --add=port=1194/tcp
-#firewall-cmd --permanet  --add-masquerade
-#firewall-cmd --reload
-#yum install -y easy-rsa
+#   yum install -y openvpn
+#   firewall-cmd --permanent --add=port=1194/tcp
+#   firewall-cmd --permanet  --add-masquerade
+#   firewall-cmd --reload
+#   yum install -y easy-rsa
 
 
 # create a directory under openvpn

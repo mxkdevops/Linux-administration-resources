@@ -1,0 +1,27 @@
+
+   10  pwd
+   11  cd /usr/local
+   12  tar -xvf /root/apache-tomcat-0.0.76.tar.gz
+   13  tar -xvf /apache-tomcat-0.0.76.tar.gz
+   14  tar -xvf /root apache-tomcat-0.0.76.tar.gz
+   15   apache-tomcat-0.0.76.tar.gz
+   16  cd
+   17  ls
+   18  cp apache-tomcat-9.0.76.tar.gz /usr/local/
+   19  cd /usr/local
+   20  ls
+   21  tar -xvf apache-tomcat-9.0.76.tar.gz
+   22  ls
+   23  mv apache-tomcat-9.0.76 tomcat9
+   24  ls
+   25  useradd -r tomcat
+   26  chown -R tomcat:tomcat /usr/local/tomcat9
+   27  vim /etc/systemd/system/tomcat.service
+   28  systemctl system reload
+   29  systemctl start tomcat.service
+   30  systemctl enable tomcat.service
+   31  systemctl status tomcat.service
+   32  cd /usr/local/tomcat9
+   33  vim conf/tomcat-users.xml
+   34  vim webapps/manager/META-INF/context.xml
+   35  systemctl restart tomcat

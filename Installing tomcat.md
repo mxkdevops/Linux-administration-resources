@@ -38,6 +38,18 @@ Restart=always
 WantedBy=multi-user.target
 
 ```
+restart the service using 'systemctl'
+#systemctl satrt tomcat.service
+#systemctl enable tomcat.service
+#systemctl status tomcat.service
+
+Go to browser check with public ip :8080
+add a admin user 
+vim conf/tomcat-users.xml
+
+
+
+
 
 
 

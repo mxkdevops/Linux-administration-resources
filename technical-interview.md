@@ -12,8 +12,15 @@ What is main configuration file of SSH?
 #rpm -qa| grep ssh
 #rpm -ql openssh-server-8.7p1-24.el9_1.x86_64
 ```
-How to change Port no. of SSH?
-How to Block SSH access for a single user?
+# How to change Port no. of SSH?
+# How to Block SSH access for a single user?
+```
+#vim /etc/ssh/sshd_config
+#add a entry to the bottom
+DenyUsers harry
+press esc
+save and exit : wq
+```
 What are the type of files in linux OS? ( regular -, d
 What is the difference between file and directory?
 How to check free space on Linux OS?

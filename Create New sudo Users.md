@@ -1,23 +1,23 @@
-Create Two New Users
+# Create Two New Users
 Create a gfreeman user on the system:
-
+```
 sudo useradd -m gfreeman
 Create an avance user, and assign it to the wheel supplemental group:
-
 sudo useradd -G wheel -m avance
 Set the password for both accounts to LASudo321:
-
 sudo passwd gfreeman
 sudo passwd avance
-Verify the /etc/sudoers File and Test Access
+```
+# Verify the /etc/sudoers File and Test Access
 Verify that the /etc/sudoers file will allow the wheel group access to run all commands with sudo:
-
+```
 sudo visudo
 Note that there should not be a comment (#) on this line of the file:
 
 %wheel  ALL=(ALL)       ALL
 Switch to the avance account, and use the dash (-) to utilize a login shell:
-
+```
+```
 sudo su - avance
 Attempt to read the /etc/shadow file at the console:
 
@@ -26,11 +26,11 @@ Rerun the command with the sudo command:
 
 sudo cat /etc/shadow
 After you have verified avance can read the /etc/shadow file, log out of that account:
-
+```
 exit
-Set Up the Web Administrator
+# Set Up the Web Administrator
 Create a new sudoers file in the /etc/sudoers.d directory that will contain a standalone entry for webmasters:
-
+```
 sudo visudo -f /etc/sudoers.d/web_admin
 Enter in the following at the top of the file:
 
@@ -50,3 +50,4 @@ Try to read the new web_admin sudoers file:
 
 sudo cat /etc/sudoers.d/web_admin
 Since the cat command is not listed in the command alias group for WEB, gfreeman cannot use sudo to read this file.
+```

@@ -115,6 +115,17 @@ Check layer 2 command arping
 #arping 10.0.1.11
 ```
 
+# First, let's see if NetworkManager is even running:
+```
+[cloud_user@host]$ systemctl status NetworkManager
 
+
+That will show us that is it. Now let's get a list of active connections.
+[cloud_user@host]$ nmcli c show
+
+We'll see a line for ens5. That's the one we're going to be querying.
+
+Get the Information
+$ nmcli d show ens5
 
 

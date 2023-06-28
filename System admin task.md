@@ -70,6 +70,7 @@ Cheking IP routing tabel
 #route -n  ( not found error ) ----> new command #ip r
 -bash: route: command not found
 Start googling found that its replace with IP command
+```
 
 Step 1. Package Installation: Run the following command to install net-tools package:
 ```
@@ -81,6 +82,7 @@ Installed:
 
 Complete!
 ```
+Check now route table 
 ```
 [root@0e7cd22c7f1c ~]# route -n
 Kernel IP routing table
@@ -90,6 +92,7 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 
 ```
 add 2 entry in ip table
+
 ```
 # ip route add 10.0.1.0/24 dev eth0 tab 1
 # ip route add 10.0.1.0/24 dev eth1 tab 2
@@ -101,7 +104,16 @@ add 2 entry in ip table
  
  ```
 
-
+Check layer 3 ping command
+```
+ping -I eth1 10.0.1.11
+ping 10.0.1.20
+#curl -I 10.0.1.20
+```
+Check layer 2 command arping
+```
+#arping 10.0.1.11
+```
 
 
 

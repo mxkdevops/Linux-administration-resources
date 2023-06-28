@@ -89,9 +89,17 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 172.31.96.0     0.0.0.0         255.255.240.0   U     100    0        0 ens5
 
 ```
-
+add 2 entry in ip table
+```
 # ip route add 10.0.1.0/24 dev eth0 tab 1
 # ip route add 10.0.1.0/24 dev eth1 tab 2
+ # ip route show tab 1 
+
+ add a rule 
+ #ip rule add from 10.0.1.0/24 tab 1
+ #ip rule add from 10.0.1.0/24 tab 2 
+ 
+ ```
 
 
 

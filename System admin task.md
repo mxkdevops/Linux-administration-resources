@@ -16,6 +16,18 @@ lsof -u cloud_user
 lsof -i 
 #umount /run/user/1001/gvfs
 ```
+Try to find the dig command
+```
+$ type -a dig
+$ yum whatprovides dig
+$ yum whatprovides host
+$ sudo dnf install bind-utils
+$ sudo yum install bind-utils
+$ dig www.nixcraft.com
+$ dig @1.1.1.1 google.com
+$ dig @1.1.1.1 MX nixcraft.com
+$ dig @1.1.1.1 AAAA yahoo.com
+```
 # Process Discovery 
 ```
 #top

@@ -21,6 +21,7 @@ Try to find the dig command
 $ type -a dig
 $ yum whatprovides dig
 $ yum whatprovides host
+$ sudo dnf whatprovides '*bin/dig'
 $ sudo dnf install bind-utils
 $ sudo yum install bind-utils
 $ dig www.nixcraft.com

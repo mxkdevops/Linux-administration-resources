@@ -1,3 +1,7 @@
+
+Redhut dig command install if not found
+https://www.cyberciti.biz/faq/rhel-8-dig-command-not-found-how-to-install-dig-on-rhel/
+
 # Linux-administration-resources
 
 # Linux System Administrator Projects

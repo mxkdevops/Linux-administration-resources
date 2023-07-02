@@ -17,7 +17,7 @@ sudo systemctl start firewalld
 sudo systemct enable firewalld
 sudo systemctl reload firewalld
 sudo firewall-cmd--permanent  --add-port =80/tcp
-sudo firewall-cmd-permaent --add-port=22/tcp
+sudo firewall-cmd--permaent --add-port=22/tcp
 sudo firewalld-cmd  --reload
 sudo systemctl enable firewalld
 

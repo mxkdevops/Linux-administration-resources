@@ -31,15 +31,48 @@ Display DMI/SMBIOS from
 $dmidecode
 Show infor about disk data
 hdparm -i /dev/sda
+Perform a read speed test on disk sda
+$hdparm -i /dev/sda
+Test for unreadable blocks on disk sda
+badblocks -s /dev/sda
 ```
-Display a list of open files 
+# 3. Performance monitoring and statistics 
 ```
-#lsof
-#lsof | less
-#lsof -u cloud_user |wc -l
-lsof -u cloud_user
-lsof -i 
-#umount /run/user/1001/gvfs
+# Display and manage the top processes
+top
+
+# Interactive process viewer (top alternative)
+htop
+
+# Display processor related statistics
+mpstat 1
+
+# Display virtual memory statistics
+vmstat 1
+
+# Display I/O statistics
+iostat 1
+
+# Display the last 100 syslog messages  (Use /var/log/syslog for Debian based systems.)
+tail -100 /var/log/messages
+
+# Capture and display all packets on interface eth0
+tcpdump -i eth0
+
+# Monitor all traffic on port 80 ( HTTP )
+tcpdump -i eth0 'port 80'
+
+# List all open files on the system
+lsof
+
+# List files opened by user
+lsof -u user
+
+# Display free and used memory ( -h for human readable, -m for MB, -g for GB.)
+free -h
+
+# Execute "df -h", showing periodic updates
+watch df -h
 ```
 Try to find the dig command
 ```

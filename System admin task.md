@@ -1,13 +1,36 @@
-# Gathering System information
+# 1.System information
 
 ```
-$uname -a # Display linux system information 
-$uname -r # Display kernal release information
-#uptime
+$uname -a 
+$uname -r
+$uptime
+$ cat /etc/os-release
+$ hostname
+$ hostanem - I
+$ last reboot
+$date
+$cal
+$w
+$whoami
+$pwd
+```
+# 2.Hardware Information 
+```
+Display message in kernal ring buffer
+$dmesg
+Display CPU infroamtion
+$ cat /proc/cpuinfo
 #df
 #df -h
 #free -m
-#free -h 
+#free -h
+Display PCI devices
+$lspci -tv
+$lsusb -tv
+Display DMI/SMBIOS from
+$dmidecode
+Show infor about disk data
+hdparm -i /dev/sda
 ```
 Display a list of open files 
 ```

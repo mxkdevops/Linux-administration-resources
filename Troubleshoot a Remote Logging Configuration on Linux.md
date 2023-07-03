@@ -1,110 +1,123 @@
-Troubleshoot a Remote Logging Configuration on Linux
+# Troubleshoot a Remote Logging Configuration on Linux
 Introduction
 rsyslog gathers, parses, and filters logs by default on the majority of Linux systems. These logs can also be sent to a remote logging server, where they are stored in the defined files — as long as the appropriate configuration is used on both the remote and forwarding host. In this lab, someone has attempted to set up remote logging, but both the logs and application server are experiencing issues. Discover and resolve the problems so rsyslog works on the appropriate port and logs are being sent.
 
-Solution
+# Solution
 Open two terminal windows.
 
 In the first, connect to the RHEL 8 Log Server (the logs server) using the credentials provided:
-
+```
 ssh cloud_user@<PUBLIC_IP_ADDRESS>
 Become the root user, entering the provided password when prompted:
-
+```
 [cloud_user@logs ~]$ sudo -i
+```
 In the second terminal, connect to the RHEL 8 App Server (the app server):
-
+```
 ssh cloud_user@<PUBLIC_IP_ADDRESS>
+```
 Become the root user, entering the provided password when prompted:
-
+```
 [cloud_user@app ~]$ sudo -i
+```
 Replicate the Issue
 In the logs server, confirm that rsyslog is not working:
-
+```
 [root@logs ~]# systemctl status rsyslog
 You should see several errors listed.
+```
 
 Note that there's an issue with the /etc/rsyslog.conf file, and the connection to the desired port is being refused. (The latter could mean a firewall issue.)
 
 Press Ctrl+C to kill the process.
 
 Check for firewalld:
-
+```
 [root@logs ~]# systemctl status firewalld
 You should see it isn't found, so it can't be the cause of the blocked port.
-
+```
 Check if selinux is working:
-
+```
 [root@logs ~]# sestatus
 You should see it's enabled and in its enforcing mode, so this is the problem.
+```
 
 Resolve the Logging Server Issues
 Still in the logs server, open up a new port for SELinux:
-
+```
 [root@logs ~]# semanage port -a -t syslogd_port_t -p tcp 30514
 It may take a minute or so to finishing running.
-
+```
 Open /etc/rsyslog.conf to take a look at the priority that's providing an error:
-
+```
 [root@logs ~]# vim /etc/rsyslog.conf
+
+```
 The error that was returned earlier had to do with the line including ServerName, so search for that within the file by typing:
-
+```
 /ServerName
+```
 Notice that the line to configure our remote logs is not formatted correctly: *.error;crit;alert;emerg.
-
+```
 Press Enter and then i to edit.
-
+```
 Edit the line to match the following, so that it will alert on all of these levels:
-
+```
  *.error;*.crit;*.alert;*.emerg
 Edit the -$ServerName value to make it the following instead:
 
 -?ServerName
 Save and exit the file by pressing Escape followed by :wq.
-
+```
 Restart rsyslog:
-
+```
 [root@logs ~]# systemctl restart rsyslog
 Check if there are any repeating error messages:
-
+```
+```
 [root@logs ~]# systemctl status rsyslog
 There shouldn't be any errors listed.
-
+```
 Press Ctrl+C to kill the process.
 
 Make sure rsyslog is listening on the appropriate port:
-
+```
 [root@logs ~]# ss -lpt
+```
 You should see the rsyslogd service is now bound to port 30514.
 
 In app server terminal, try to send a message:
-
+```
 [root@app ~]# logger test -p user.emerg
+```
 You should see output indicating it sent the message.
-
+```
 In the logs server terminal, change directory to /var/log/hosts/app to view the logs:
 
 [root@logs ~]# cd /var/log/hosts/app
 It looks like it doesn't exist.
-
+```
 Resolve the Log Forwarding Issues
+```
 In the app server terminal, press Ctrl+C to kill the process.
 
 Check if rsyslog is listening on any ports:
 
 [root@app ~]# ss -lpt
 You should see rsyslog is not listed.
-
+````
 View the remote logging file:
-
+```
 [root@app ~]# vim /etc/rsyslog.d/remotelogging.conf
 Notice it's targeting the incorrect port (514) rather than port 30514.
 
 Press i to enter insert mode, and change 514 to 30514.
 
 Save and exit the file by pressing Escape followed by :wq.
+```
 
 Restart rsyslog:
-
+```
 [root@app ~]# systemctl restart rsyslog
 Check its status:
 
@@ -112,9 +125,9 @@ Check its status:
 You should see an error.
 
 Press Ctrl+C to kill the process.
-
+```
 The issue on the logs server was SELinux, so check if selinux is running on the app server:
-
+```
 [root@app ~]# sestatus
 Like before, you should see it's enabled and in enforcing mode.
 
@@ -122,9 +135,9 @@ Open up a new port for SELinux:
 
 [root@app ~]# semanage port -a -t syslogd_port_t -p tcp 30514
 It will take a minute or so to finish running.
-
+```
 Restart rsyslog:
-
+```
 [root@app ~]# systemctl restart rsyslog
 Try sending a message again:
 
@@ -133,10 +146,11 @@ Check the status of rsyslog:
 
 [root@app ~]# systemctl status rsyslog
 It should be active and running without any errors.
-
+```
 In the logs server terminal, you should see the messages you sent from the app server terminal.
-
+```
 In the logs server terminal, make sure /var/log/hosts/app.log exists and grep for the message you sent from the app server:
 
 [root@logs ~]# cat /var/log/hosts/app.log | grep test
 The messages should display in the output.
+```

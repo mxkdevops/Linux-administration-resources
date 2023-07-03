@@ -1,3 +1,13 @@
+First things first 
+$ ssh user@ip
+$ ssh cloud_user@3.248.223.178
+$ sudo -i
+$ su -i
+$env $PATH
+
+
+
+
 # 1.System information
 
 ```

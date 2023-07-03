@@ -1,6 +1,8 @@
 # Gathering System information
 
 ```
+$uname -a # Display linux system information 
+$uname -r # Display kernal release information
 #uptime
 #df
 #df -h

@@ -1,7 +1,7 @@
 
 # Linux System Administrator Projects
-Apache - Web server 
-NGINX- web and proxy server 
+### Apache - Web server 
+### NGINX- web and proxy server 
 
 # 1.Configure the LAMP Stack
 Linux

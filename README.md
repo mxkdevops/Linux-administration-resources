@@ -3,7 +3,7 @@
 ### Apache - Web server 
 ### NGINX- web and proxy server 
 
-# 1.Configure the LAMP Stack
+# Configure the LAMP Stack
 Linux
 Apache
 MySQL

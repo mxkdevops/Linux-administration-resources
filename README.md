@@ -9,14 +9,8 @@ Apache
 MySQL
 PHP
 # Deploy an Open Source Application
-Alfresco
-Bugzilla
-DokuWiki
-Drupal
-Etherpad Lite
+
 Gitlab
-Joomla
-MediaWiki
 Moodle
 osTicket
 OwnCloud

@@ -24,4 +24,10 @@ $journalctl - p 4
 $ vim /etc/systemd/journald.conf
 $ mkdir /var/log/journal
 $chown root:systemd-journal /var/log/journal/
+$chmod 2755 /var/log/journal/
+$systemctl restart systemd-journald
+$ll /var/log/journal/
+$journalctl -xb
+$journalctl --since '2023-07-06 11:00:00'
+
 ```

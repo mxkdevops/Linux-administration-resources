@@ -1,6 +1,12 @@
 #  COnfigure  Performance co pilot in Redhat server 
 
 ```
+Listing all package
+$yum list all
+
+Lisiitng the repository list 
+$ yum repolist
+
 #Login to ssh terminal
 $ ssh cloud_user@3.253.46.19
 
@@ -32,4 +38,16 @@ $pmstat -t 1s -T 10s
 
 $pmstat -a 0e7cd22c7f1c.mylabserver.com -S '@Thu Jul 6 06:00:00 UTC 2023
 ' -T 'Thu Jul  6 07:00:00 AM UTC 2023' 
+```
+```
+Check pminfo with grep or less
+$pminfo |grep cpu
+$pminfo |less cpu
+$pminfo -t |less cpu
+$pminfo -t |grep cpu |less
+```
+#Pmval/pmrep
+View system data by matrics; pmrep is considered mora human readable
+```
+
 ```

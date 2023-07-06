@@ -18,4 +18,10 @@ $journalctl -ef
 $journalctl -k
 #Search with specific program such as sshd uing -u option
 $ journalctl -u sshd
+#Search journalctl under its priority
+$journalctl - p 4
+# Persistent logging open
+$ vim /etc/systemd/journald.conf
+$ mkdir /var/log/journal
+$chown root:systemd-journal /var/log/journal/
 ```

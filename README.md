@@ -4,7 +4,10 @@
 #ssh cloud_user@<PUBLIC_IP_ADDRESS>
 $sudo -i
 $grep 'httpd' /etc/yum.conf
-
+$pminfo |grep cpu
+$pminfo |less cpu
+$pminfo -t |less cpu
+$pminfo -t |grep cpu |less
 ```
 
 # Check the running services 

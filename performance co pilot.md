@@ -7,6 +7,9 @@ $yum list all
 Lisiitng the repository list 
 $ yum repolist
 
+Displaying package infor 
+$yum info pcp
+
 #Login to ssh terminal
 $ ssh cloud_user@3.253.46.19
 

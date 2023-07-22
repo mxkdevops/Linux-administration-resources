@@ -17,6 +17,8 @@ $lastlogin
 
 # check memeory and process and storage
 $ ps aux
+$ps -u root
+$ps -u cloud_user
 $ free -m
 $df -h
 $ du -ah

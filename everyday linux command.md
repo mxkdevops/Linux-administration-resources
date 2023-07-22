@@ -1,4 +1,4 @@
-# Everyday run this linux command 
+## Everyday run this linux command 
 ```
 #ssh to cloud server 
 $ ssh cloud_user@63.33.71.33
@@ -22,11 +22,13 @@ $ cp file1 file2
 $ file file1
 #Create directory with -p option 
 $mkdir -p /opt/dev/ops/devops/test
-
-#Create a soft link
-$ln -s /opt/dev/ops/devops/test/commands.txt cmds
-
 ```
+
+##Create a soft link
+```
+$ln -s /opt/dev/ops/devops/test/commands.txt cmds
+```
+
 ```
 #Change the hostname 
 $vim /etc/hostname

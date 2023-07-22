@@ -75,7 +75,11 @@ vim
 :%s/coronavirus/covid19
 :%s/coronavirus/covid19/g [all items match will replace ]
 ```
-
-
+```
+sed
+sed  's/coronavirus/covid19/g' samplefile.txt
+sed  's/name_from/name_to/g' *
+sed -i 's/name_from/name_to/g' filename 
+```
 
 

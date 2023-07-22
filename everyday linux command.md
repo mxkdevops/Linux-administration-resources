@@ -24,17 +24,18 @@ $ file file1
 $mkdir -p /opt/dev/ops/devops/test
 ```
 
-##Create a soft link
+## Create a soft link
 ```
 $ln -s /opt/dev/ops/devops/test/commands.txt cmds
 ```
 
+
+## Change the hostname 
 ```
-#Change the hostname 
 $vim /etc/hostname
 $hostname red-hat.mylabserver.com
-
 ```
+
 ## Grep Command file search 
 ```
 $grep word filename
@@ -44,25 +45,32 @@ $grep -R SELINUX /etc/*
 $grep -vi SELINUX /etc/* [reverse search]
 ```
 ## less command 
+```
 less /etc/passwd
+```
 ## more command
+```
 more /etc/passwd
+```
 ## head first 10 lines
+```
 head /etc/passwd
 head -2 /etc/passwd
 head -5 /etc/passwd
 tail -10 /var/log/messages
 tail -f /var/log/messages
 ```
-```
+
 ## filtering with colume
+```
 cut -d: -f1 /etc/passwd
 cut -d: -f3 /etc/passwd
 awk -F':' '{print $1}' /etc/passwd
 ```
 
-```
+
 ## search and replace 
+```
 vim 
 :%s/coronavirus/covid19
 :%s/coronavirus/covid19/g [all items match will replace ]

@@ -14,6 +14,7 @@ $ uptime
 $whoami
 $id
 $lastlogin
+$wc -l /etc/passwd ---> count line 
 
 # check memeory and process and storage
 $ ps aux
@@ -112,5 +113,10 @@ sed  's/coronavirus/covid19/g' samplefile.txt
 sed  's/name_from/name_to/g' *
 sed -i 's/name_from/name_to/g' filename 
 ```
-
+## dump file to null
+```
+yum install vim -y > /dev/null
+cat /dev/null
+cat /dev/null > /tmp/sysinfo.txt
+```
 

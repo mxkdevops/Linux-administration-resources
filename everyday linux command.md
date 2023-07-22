@@ -9,8 +9,37 @@ $ sudo -i
 #cheeck current working  directory
 $ pwd
 
-# create a direcotry called devops
-$ mkdir devops
+# check uptime 
+$ uptime 
+$whoami
+$id
+$lastlogin
+
+# check memeory and process and storage
+$ ps aux
+$ free -m
+$df -h
+$ du -ah
+$du -sh
+$top
+$dmesg
+$iostat l
+
+# Check port are listening
+$ lsof -l -p -n |grep LISTEN
+$lsof -i:8080
+$lsof -i :22
+$ss -tulpn |grep LISTEN 
+
+
+# System log monitor
+$cd /var/log
+$ls -la /var/log
+$cat /var/log/syslog
+$cat /var/log.auth.log
+$ tail -10 /var/log/auth.log
+$ tail -f /var/log/auth.log
+
 
 #Check the long list file with permission
 $ ls -la

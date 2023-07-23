@@ -76,6 +76,7 @@ $grep firewall anaconda-ks.cfg
 $grep -i firewall anaconda-ks.cfg  [-i option will ignore the case sensitivity]
 $grep -R SELINUX /etc/*
 $grep -vi SELINUX /etc/* [reverse search]
+$grep -i error_log /var/log/eror_log
 ```
 ## less command 
 ```

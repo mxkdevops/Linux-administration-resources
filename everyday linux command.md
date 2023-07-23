@@ -124,5 +124,9 @@ cat /dev/null > /tmp/sysinfo.txt
 ```
  vim /etc/httpd/conf/httpd.conf
  tail -f /var/log/httpd/error_log
+ / slash key will search within configuraton file
+ : will come to end of line
+ :wq will save and exit vim
+ :q! will exit vim without saving 
 ```
-
+#

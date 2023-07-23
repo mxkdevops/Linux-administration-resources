@@ -42,6 +42,7 @@ $cat /var/log/syslog
 $cat /var/log.auth.log
 $ tail -10 /var/log/auth.log
 $ tail -f /var/log/auth.log
+$ tail -f /var/log/httpd/
 
 
 #Check the long list file with permission
@@ -118,5 +119,10 @@ sed -i 's/name_from/name_to/g' filename
 yum install vim -y > /dev/null
 cat /dev/null
 cat /dev/null > /tmp/sysinfo.txt
+```
+## Apache log configuration 
+```
+ vim /etc/httpd/conf/httpd.conf
+ tail -f /var/log/httpd/error_log
 ```
 

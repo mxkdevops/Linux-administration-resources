@@ -44,6 +44,16 @@ $netstat -tlpn| grep apache
 $ss -tlpn| grep apache
 
 ```
+## Linux firewall-cmd
+```
+#If you use firewalld, open the TCP port 80 in the local firewall:
+$firewall-cmd --permanent --add-port=80/tcp
+$firewall-cmd --reload
+#add a servie to firewall
+$firewall-cmd --permanent --zone=public --add-service=mysql
+#reload the firewall configuration:
+$firewall-cmd --reload
+```
 
 ## Add Selinux rules for port 8081.
 ```
@@ -51,7 +61,13 @@ $ss -tlpn| grep apache
 # semanage port -a -t http_port_t -p tcp 8081
 # semanage port -m -t http_port_t -p tcp 8081
 ```
+## Enable a service 
+```
+Enable and start the httpd service:
 
+$systemctl enable --now httpd
+
+```
 ## System log monitor
 ```
 $cd /var/log

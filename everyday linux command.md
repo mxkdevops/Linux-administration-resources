@@ -9,6 +9,10 @@ $ sudo -i
 #systemctl restart apache2
 # netstat -tlpn| grep apache
 # ss -tlpn| grep apache
+## Add Selinux rules for port 8081.
+
+# semanage port -a -t http_port_t -p tcp 8081
+# semanage port -m -t http_port_t -p tcp 8081
 
 #cheeck current working  directory
 $ pwd

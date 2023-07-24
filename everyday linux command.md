@@ -5,32 +5,29 @@ $ ssh cloud_user@63.33.71.33
 
 #Become root user 
 $ sudo -i
+```
 
-#systemctl restart apache2
-# netstat -tlpn| grep apache
-# ss -tlpn| grep apache
-#ps -eo comm,etime,user | grep httpd
-# ps -eo comm,etime,user | grep root | grep httpd
-## Add Selinux rules for port 8081.
-
-
-# semanage port -a -t http_port_t -p tcp 8081
-# semanage port -m -t http_port_t -p tcp 8081
-
+## First thing first 
+```
 #cheeck current working  directory
 $ pwd
-
-# check uptime 
-$ uptime 
+$uptime 
 $whoami
 $id
 $lastlogin
+$ cat /etc/passwd
+$cat /etc/group
+$cat /etc/gshadow
 $wc -l /etc/passwd ---> count line 
 
-# check memeory and process and storage
+```
+## check memeory and process and storage
+```
 $ ps aux
 $ps -u root
 $ps -u cloud_user
+$ps -eo comm,etime,user | grep httpd
+$ps -eo comm,etime,user | grep root | grep httpd
 $ free -m
 $df -h
 $ du -ah
@@ -38,15 +35,25 @@ $du -sh
 $top
 $dmesg
 $iostat l
+```
+## Check ports , listening ports and established port 
+```
+$ netstat
+$netstat  -tlpn
+$netstat -tlpn| grep apache
+$ss -tlpn| grep apache
 
-# Check port are listening
-$ lsof -l -p -n |grep LISTEN
-$lsof -i:8080
-$lsof -i :22
-$ss -tulpn |grep LISTEN 
+```
 
+## Add Selinux rules for port 8081.
+```
 
-# System log monitor
+# semanage port -a -t http_port_t -p tcp 8081
+# semanage port -m -t http_port_t -p tcp 8081
+```
+
+## System log monitor
+```
 $cd /var/log
 $ls -la /var/log
 $cat /var/log/syslog
@@ -54,12 +61,18 @@ $cat /var/log.auth.log
 $ tail -10 /var/log/auth.log
 $ tail -f /var/log/auth.log
 $ tail -f /var/log/httpd/
+```
+## Grep Command file search 
+```
+$grep word filename
+$grep firewall anaconda-ks.cfg
+$grep -i firewall anaconda-ks.cfg  [-i option will ignore the case sensitivity]
+$grep -R SELINUX /etc/*
+$grep -vi SELINUX /etc/* [reverse search]
+```
 
-
-#Check the long list file with permission
-$ ls -la
-
-# copy files
+## copy files
+```
 $ cp file1 file2
 
 #check file type
@@ -73,21 +86,13 @@ $mkdir -p /opt/dev/ops/devops/test
 $ln -s /opt/dev/ops/devops/test/commands.txt cmds
 ```
 
-
 ## Change the hostname 
 ```
 $vim /etc/hostname
 $hostname red-hat.mylabserver.com
 ```
 
-## Grep Command file search 
-```
-$grep word filename
-$grep firewall anaconda-ks.cfg
-$grep -i firewall anaconda-ks.cfg  [-i option will ignore the case sensitivity]
-$grep -R SELINUX /etc/*
-$grep -vi SELINUX /etc/* [reverse search]
-```
+
 ## less command 
 ```
 less /etc/passwd
@@ -111,8 +116,6 @@ cut -d: -f1 /etc/passwd
 cut -d: -f3 /etc/passwd
 awk -F':' '{print $1}' /etc/passwd
 ```
-
-
 ## search and replace 
 ```
 vim 
@@ -140,4 +143,4 @@ cat /dev/null > /tmp/sysinfo.txt
  :wq will save and exit vim
  :q! will exit vim without saving 
 ```
-#
+

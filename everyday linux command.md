@@ -6,6 +6,10 @@ $ ssh cloud_user@63.33.71.33
 #Become root user 
 $ sudo -i
 
+#systemctl restart apache2
+# netstat -tlpn| grep apache
+# ss -tlpn| grep apache
+
 #cheeck current working  directory
 $ pwd
 

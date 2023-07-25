@@ -10,6 +10,7 @@ $ sudo -i
 ## First thing first 
 ```
 #cheeck current working  directory
+$locate 
 $ pwd
 $uptime 
 $whoami
@@ -66,6 +67,12 @@ $firewall-cmd --reload
 Enable and start the httpd service:
 
 $systemctl enable --now httpd
+
+```
+## Network configure with nmcli command
+```
+$nmcli -p device
+$nmcli device status
 
 ```
 ## System log monitor

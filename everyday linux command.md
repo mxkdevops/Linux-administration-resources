@@ -1,1 +1,162 @@
+## Everyday run this linux command 
+```
+#ssh to cloud server 
+$ ssh cloud_user@63.33.71.33
+
+#Become root user 
+$ sudo -i
+```
+
+## First thing first 
+```
+#cheeck current working  directory
+$ pwd
+$uptime 
+$whoami
+$id
+$lastlogin
+$ cat /etc/passwd
+$cat /etc/group
+$cat /etc/gshadow
+$wc -l /etc/passwd ---> count line 
+
+```
+## check memeory and process and storage
+```
+$ ps aux
+$ps -u root
+$ps -u cloud_user
+$ps -eo comm,etime,user | grep httpd
+$ps -eo comm,etime,user | grep root | grep httpd
+$ free -m
+$df -h
+$ du -ah
+$du -sh
+$top
+$dmesg
+$iostat l
+```
+## Check ports , listening ports and established port 
+```
+$ netstat
+$netstat  -tlpn
+$netstat -tlpn| grep apache
+$ss -tlpn| grep apache
+
+```
+## Linux firewall-cmd
+```
+#If you use firewalld, open the TCP port 80 in the local firewall:
+$firewall-cmd --permanent --add-port=80/tcp
+$firewall-cmd --reload
+#add a servie to firewall
+$firewall-cmd --permanent --zone=public --add-service=mysql
+#reload the firewall configuration:
+$firewall-cmd --reload
+```
+
+## Add Selinux rules for port 8081.
+```
+
+# semanage port -a -t http_port_t -p tcp 8081
+# semanage port -m -t http_port_t -p tcp 8081
+```
+## Enable a service 
+```
+Enable and start the httpd service:
+
+$systemctl enable --now httpd
+
+```
+## System log monitor
+```
+$cd /var/log
+$ls -la /var/log
+$cat /var/log/syslog
+$cat /var/log.auth.log
+$ tail -10 /var/log/auth.log
+$ tail -f /var/log/auth.log
+$ tail -f /var/log/httpd/
+```
+## Grep Command file search 
+```
+$grep word filename
+$grep firewall anaconda-ks.cfg
+$grep -i firewall anaconda-ks.cfg  [-i option will ignore the case sensitivity]
+$grep -R SELINUX /etc/*
+$grep -vi SELINUX /etc/* [reverse search]
+```
+
+## copy files
+```
+$ cp file1 file2
+
+#check file type
+$ file file1
+#Create directory with -p option 
+$mkdir -p /opt/dev/ops/devops/test
+```
+
+## Create a soft link
+```
+$ln -s /opt/dev/ops/devops/test/commands.txt cmds
+```
+
+## Change the hostname 
+```
+$vim /etc/hostname
+$hostname red-hat.mylabserver.com
+```
+
+
+## less command 
+```
+less /etc/passwd
+```
+## more command
+```
+more /etc/passwd
+```
+## head first 10 lines
+```
+head /etc/passwd
+head -2 /etc/passwd
+head -5 /etc/passwd
+tail -10 /var/log/messages
+tail -f /var/log/messages
+```
+
+## filtering with colume
+```
+cut -d: -f1 /etc/passwd
+cut -d: -f3 /etc/passwd
+awk -F':' '{print $1}' /etc/passwd
+```
+## search and replace 
+```
+vim 
+:%s/coronavirus/covid19
+:%s/coronavirus/covid19/g [all items match will replace ]
+```
+```
+sed
+sed  's/coronavirus/covid19/g' samplefile.txt
+sed  's/name_from/name_to/g' *
+sed -i 's/name_from/name_to/g' filename 
+```
+## dump file to null
+```
+yum install vim -y > /dev/null
+cat /dev/null
+cat /dev/null > /tmp/sysinfo.txt
+```
+## Apache log configuration 
+```
+ vim /etc/httpd/conf/httpd.conf
+ tail -f /var/log/httpd/error_log
+ / slash key will search within configuraton file
+ : will come to end of line
+ :wq will save and exit vim
+ :q! will exit vim without saving 
+```
 

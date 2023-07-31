@@ -1,4 +1,35 @@
 ```
+#ssh to account
+ssh cloud_user@52.87.246.4
+#Become a root user
+sudo -i
+#add a user to the system
+useradd km443
+#To create a new group we would run
+groupadd superhero
+
+#Set "sudo " group as the km443 accoutns primary group
+usermod -g sudo km443
+
+# Add "superhero " as a suplementary group on all three userss
+usermod -aG superhero raheel
+usemrod -aG superhero km443
+usemrod -aG superhero mxkdevops
+
+#Lock the km443 account
+usermod -L km443
+# set a password to unlock a account
+passwd km443
+# unlock the useraccount
+usermod -U km443
+
+
+
+```
+
+
+
+```
 #SSH to 
 
 #ssh cloud_user@<PUBLIC_IP_ADDRESS>

@@ -7,8 +7,10 @@ https://learn.acloud.guru/course/lpic-2-linux-engineer-exam-201/learn/97595be5-b
 ```
 https://learn.acloud.guru/course/lpic-2-linux-engineer-exam-201/learn/c1322ecf-6d3b-419d-8952-bd10281b7300/3ef541d4-33a3-4b11-89d1-eb4794a1e1e7/lab/3ef541d4-33a3-4b11-89d1-eb4794a1e1e7
 ```
-
-
+## Red Hat Certified System Administrator (EX200) - v8 Exam Challenge Lab
+```
+https://learn.acloud.guru/handson/68825181-0843-4471-96e4-2f437171687a
+'''
 
 ## Implement an Apache Web Server with Perl CGI
 ```

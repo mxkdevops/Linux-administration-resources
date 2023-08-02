@@ -3,6 +3,41 @@
 ssh cloud_user@52.87.246.4
 #Become a root user
 sudo -i
+```
+## Generate a SSH key 
+```
+#Generate a ssh key
+$ ssh-keygen
+#copy it over to private of the other server
+ssh-copy-id <server2_PRIVATE_IP>
+```
+## Configure SSH to use a different Port on CentOS
+#Login to your server and open the OpenSSH server configuration file, /etc/ssh/sshd_config for editing.
+```
+vim /etc/ssh/sshd_config
+Uncomment the line, # Port 22 and set it to a desired port
+```
+## Open New SSH Port on Firewall
+
+#If firewall is running, allow the new port on through it.
+```
+firewall-cmd --add-port=3456/tcp --permanent
+firewall-cmd --reload
+```
+```
+#Restart sshd service
+systemctl restart sshd
+```
+## Verify the New SSH Port
+After restarting the SSH service, check if the SSH port has been updated successfully. You can do this by running the following command:
+```
+ss -altnp4 | grep sshd
+```
+
+LISTEN     0      128          *:3456                     *:*                   users:(("sshd",pid=1176,fd=3))
+LISTEN     0      128          *:22                       *:*                   users:(("sshd",pid=1176,fd=5))
+##########################
+```
 #add a user to the system
 useradd km443
 #To create a new group we would run

@@ -21,12 +21,35 @@ Uncomment the line, # Port 22 and set it to a desired port
 
 #If firewall is running, allow the new port on through it.
 ```
-firewall-cmd --add-port=3456/tcp --permanent
-firewall-cmd --reload
+#Install firewalld
+``
+$ sudo dnf install firewalld
+```
+#start/stop/enable/disable/mask/unmask firewalld
+```
+$ sudo systemctl unmask firewalld
+$ sudo systemctl start firewalld
+$ sudo systemctl enable firewalld
+$ sudo systemctl stop firewalld
+$ sudo systemctl disable firewalld
+$ sudo systemctl mask firewalld
+```
+```
+$firewall-cmd --add-port=3456/tcp --permanent
+$firewall-cmd --reload
+$ firewall-cmd --list-ports
 ```
 ```
 #Restart sshd service
 systemctl restart sshd
+```
+```
+Remove the port from the allowed ports to close it for the incoming traffic:
+
+$ sudo firewall-cmd --remove-port=port-number/port-type
+Make the new settings persistent:
+
+$ sudo firewall-cmd --runtime-to-permanent
 ```
 ## Verify the New SSH Port
 After restarting the SSH service, check if the SSH port has been updated successfully. You can do this by running the following command:

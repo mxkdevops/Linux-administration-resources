@@ -18,9 +18,9 @@ vim /etc/ssh/sshd_config
 Uncomment the line, # Port 22 and set it to a desired port
 ```
 ## Open New SSH Port on Firewall
-```
+
 #If firewall is running, allow the new port on through it.
-```
+
 #Install firewalld
 ```
 $ sudo dnf install firewalld

@@ -37,6 +37,14 @@ ss -altnp4 | grep sshd
 LISTEN     0      128          *:3456                     *:*                   users:(("sshd",pid=1176,fd=3))
 LISTEN     0      128          *:22                       *:*                   users:(("sshd",pid=1176,fd=5))
 ##########################
+
+## Opening a port using firewalld
+```
+#Get a list of allowed ports in the current zone:
+```
+$ firewall-cmd --list-ports
+```
+###################################
 ```
 #add a user to the system
 useradd km443

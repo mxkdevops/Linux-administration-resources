@@ -6,8 +6,25 @@ sudo -i
 ```
 ## Useful commands
 ```
+#List of httpd module 
 sudo yum module list| grep httpd
+#check httpd not install 
+rpm -q httpd
+rpm -q tcpdump
+fdisk -l
+df -h
+First we'll create the physical volumes:
 
+pvcreate /dev/nvme1n1 /dev/nvme2n1
+Next we'll create the volume group:
+
+vgcreate vdoDev /dev/nvme1n1 /dev/nvme2n1
+Finally, we'll create the logical volume:
+
+lvcreate -n vdoLV -l 100%FREE vdoDev
+Now we have a single 40G device that we can set VDO up with. To create the VDO device, run this:
+
+vdo create --name=RHCE --device=/dev/vdoDev/vdoLV --vdoLogicalSize=150G --sparseIndex=enabled
 ```
 
 ## Generate a SSH key 

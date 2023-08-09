@@ -4,6 +4,12 @@ ssh cloud_user@52.87.246.4
 #Become a root user
 sudo -i
 ```
+## Useful commands
+```
+sudo yum module list| grep httpd
+
+```
+
 ## Generate a SSH key 
 ```
 #Generate a ssh key
@@ -18,37 +24,33 @@ vim /etc/ssh/sshd_config
 Uncomment the line, # Port 22 and set it to a desired port
 ```
 ## Open New SSH Port on Firewall
-
-#If firewall is running, allow the new port on through it.
-
-#Install firewalld
 ```
+Install firewall 
 $ sudo dnf install firewalld
 ```
-## start/stop/enable/disable/mask/unmask firewalld
-```
-$ sudo systemctl unmask firewalld
-$ sudo systemctl start firewalld
-$ sudo systemctl enable firewalld
-$ sudo systemctl stop firewalld
-$ sudo systemctl disable firewalld
-$ sudo systemctl mask firewalld
-```
+## add a new port to firewall and load firewall and list the all port 
 ```
 $firewall-cmd --add-port=3456/tcp --permanent
 $firewall-cmd --reload
 $ firewall-cmd --list-ports
 ```
+## start/stop/enable/disable/mask/unmask firewalld
 ```
-#Restart sshd service
-systemctl restart sshd
-```
-```
-Remove the port from the allowed ports to close it for the incoming traffic:
+$ sudo systemctl start firewalld
+$ sudo systemctl enable firewalld
+$ sudo systemctl stop firewalld
+$ sudo systemctl disable firewalld
+$ sudo systemctl mask firewalld
+$ sudo systemctl unmask firewalld
 
+```
+
+## Remove the port from the allowed ports to close it for the incoming traffic:
+```
 $ sudo firewall-cmd --remove-port=port-number/port-type
-Make the new settings persistent:
-
+```
+## Make the new settings persistent:
+```
 $ sudo firewall-cmd --runtime-to-permanent
 ```
 ## Verify the New SSH Port
@@ -57,17 +59,8 @@ After restarting the SSH service, check if the SSH port has been updated success
 ss -altnp4 | grep sshd
 ```
 
-LISTEN     0      128          *:3456                     *:*                   users:(("sshd",pid=1176,fd=3))
-LISTEN     0      128          *:22                       *:*                   users:(("sshd",pid=1176,fd=5))
-##########################
-
-## Opening a port using firewalld
-```
-#Get a list of allowed ports in the current zone:
-```
-$ firewall-cmd --list-ports
-```
 ###################################
+## User management 
 ```
 #add a user to the system
 useradd km443
@@ -89,15 +82,10 @@ passwd km443
 # unlock the useraccount
 usermod -U km443
 
-
-
 ```
 
-
-
+## Grep , less and more command 
 ```
-#SSH to 
-
 #ssh cloud_user@<PUBLIC_IP_ADDRESS>
 $sudo -i
 $grep 'httpd' /etc/yum.conf

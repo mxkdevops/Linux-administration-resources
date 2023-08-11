@@ -1,3 +1,18 @@
+#Install Terraform
+```
+https://developer.hashicorp.com/terraform/tutorials/docker-get-started/install-cli
+```
+# NGINX server in less than a minute using Docker
+```
+https://developer.hashicorp.com/terraform/tutorials/docker-get-started/install-cli
+
+```
+# Install docker in ubunu | Install using the apt repository
+```
+https://docs.docker.com/engine/install/ubuntu/
+```
+
+
 ```
 #ssh to account
 ssh cloud_user@52.87.246.4

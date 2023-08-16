@@ -1,0 +1,21 @@
+Observe Traffic on Port 3306
+Note: If you want to use tcpdump instead of Wireshark, replace tshark with tcpdump for all commands within the lab.
+
+Observe the traffic going over port 3306. Ignore any warnings about running as root:
+
+tshark -i eth0 'port 3306'
+Observe there are a number of MySQL responses currently being generated.
+
+Press CTRL + C to end the process.
+
+Write the Report to a File
+Save 50 samples of traffic to /tmp/mysql.pcap:
+
+tshark -i eth0 -c 50 -w /tmp/mysql.pcap 'port 3306'
+The counter in the output will indicate when 50 samples are saved.
+
+Confirm the Report
+Read the file to confirm:
+
+tshark -r /tmp/mysql.pcap
+Observe the attempted connections to port 3306 as well as some responses from the MySQL server.

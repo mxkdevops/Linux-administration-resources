@@ -1,0 +1,34 @@
+#Linux user management ####
+
+# User account management 
+
+commands 
+useradd 
+groupadd
+userdel
+groupdel
+usermod
+
+Files
+
+/etc/passwd
+/etc/group
+/etc/shadow
+
+Example :
+
+useradd km445
+id km445
+cd /home/
+ls
+
+groupadd superheros
+userdel -r spiderman
+groupadd nonnewgroup
+groupdel nonnewgroup
+
+usermod -aG spiderman  km445
+cat /etc/group |grep km445
+
+chgrp -R superheros km445
+

@@ -97,6 +97,7 @@ $ sudo systemctl unmask firewalld
 ## Remove the port from the allowed ports to close it for the incoming traffic:
 ```
 $ sudo firewall-cmd --remove-port=port-number/port-type
+$ sudo firewall-cmd --zone=public --remove-port=8080/tcp --permanent
 ```
 ## Make the new settings persistent:
 ```

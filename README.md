@@ -1,3 +1,7 @@
+
+#Troublesooting toolbox
+https://github.com/mxkdevops/jenkins/blob/main/jenkins%20troubleshoot.txt
+
 ## Install Terraform
 ```
 https://developer.hashicorp.com/terraform/tutorials/docker-get-started/install-cli

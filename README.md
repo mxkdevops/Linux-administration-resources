@@ -3,6 +3,17 @@
 ```
 https://github.com/mxkdevops/jenkins/blob/main/jenkins%20troubleshoot.txt
 ```
+## Install Jenkins 
+```
+1. Install jenkins from jenkins webiste
+https://www.jenkins.io/doc/book/installing/linux/#red-hat-centos
+
+2. Install jenkins following acloudguru tutorial
+
+https://learn.acloud.guru/course/93e6884d-ac98-49b6-a9cd-5e357d2dbb41/learn/
+f0ef6872-668c-4ba4-96c1-ad7d6e90b686/7376e1b8-001b-48e0-8c0c-e1ebe8ed2f03/lab/
+e29e7625-6fec-4287-9495-8c1ea470ebcd
+```
 ## Install Terraform
 ```
 https://developer.hashicorp.com/terraform/tutorials/docker-get-started/install-cli

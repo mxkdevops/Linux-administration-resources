@@ -79,6 +79,7 @@ $ sudo dnf install firewalld
 ## add a new port to firewall and load firewall and list the all port 
 ```
 $firewall-cmd --add-port=3456/tcp --permanent
+sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
 $firewall-cmd --reload
 $ firewall-cmd --list-ports
 ```

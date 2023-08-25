@@ -75,11 +75,12 @@ Uncomment the line, # Port 22 and set it to a desired port
 ```
 Install firewall 
 $ sudo dnf install firewalld
+$sudo firewall-cmd --zone=public --add-port=22/ssh --permanent
 ```
 ## add a new port to firewall and load firewall and list the all port 
 ```
 $firewall-cmd --add-port=3456/tcp --permanent
-sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
+$sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
 $firewall-cmd --reload
 $ firewall-cmd --list-ports
 ```
@@ -177,3 +178,37 @@ $journalctl -xb
 $journalctl --since '2023-07-06 11:00:00'
 
 ```
+# Tar command for compression and archive files 
+
+```
+Create a tar archive with c=create v vervose f files 
+$tar -cvf archive.tar my_files
+$tar -czvf project.tar.gz project 
+$tar -cjvf project.tar.bzip2 project
+
+```
+
+### Extract files from the tar
+```
+$ tar -xvf archieve.tar
+$ tar -czvf project.tar.gz
+$ tar -xjvf project.tar.bz2
+```
+### Curl command with options 
+```
+curl -O -L -C https://example.com/file.zip
+```
+
+### Wget command
+```
+wget -O output_file.txt http://example.com/file.txt
+```
+
+
+
+
+
+
+
+
+

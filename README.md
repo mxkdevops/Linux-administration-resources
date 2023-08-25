@@ -44,6 +44,15 @@ rpm -q httpd
 rpm -q tcpdump
 fdisk -l
 df -h
+
+cat /etc/resolv.conf
+ip a
+ip addr show
+ifconfig -a
+
+nmcli dev show |grep DNS
+rpm -qa |grep bind-utils 
+
 First we'll create the physical volumes:
 
 pvcreate /dev/nvme1n1 /dev/nvme2n1

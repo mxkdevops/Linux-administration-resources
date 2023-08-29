@@ -1,0 +1,210 @@
+LPIC-1 : System administrator 101 (v5 Objectives )
+
+101.1 Determine and configure Hardware settings 
+-Pseudo Files systems 
+-Working with kernal modules 
+-Investigating Hardware 
+
+101.2.Boot the system 
+
+-The linux Boot sequence 
+-init 
+-upstart
+-systemd
+
+101.3 Change runlevels ? Boot targets and shutdown , or 
+ reboot the system 
+
+- Change your working environaemt: run level
+-Change working environment:targets 
+-Reboot and shut down your system 
+-Configure a default boot target 
+
+
+102.1 Design Hard disk layout 
+-Main file system location 
+-Introduction to LVM 
+
+102.2 Install a Boot manager 
+-Legcacy Grub
+-Grub 2 
+-Interacting with Boot loader 
+
+102.3 Manage Shared libraries 
+- Manage shared libraries 
+
+102.4 Use Debian package Management 
+- The advanced package Manager (apt) 
+- Using Debian Package (dpkg) 
+
+102.5 Use RPM and YUM package management 
+
+- The yellowdog , Updater , Modified (YUM)
+-The red hat Package manager ( RPM)
+
+102.6 Linux as a virtualisation Guest 
+- Virtualisation and containers 
+
+103.1 Work on command line 
+- your Bash shell environemnt 
+- Bash history and the manual page 
+
+103.2 Process Text Streams using Fitlers 
+- Basic of viewing Text files 
+-Text files Statistics
+-Text manipulation 
+- More text manipulation 
+- Modify a text file Using SED 
+
+103.3 Perform Basic file Management 
+- Working with files 
+- Working with directories
+- Files and folders Compression 
+- Finding files
+- Finidng Globbing 
+- Creating a directory Structure in Linux 
+- Working with compressed Files in linux 
+- Process test streams using filters 
+
+103.4 Use Streams , pipes and redirects 
+- Understanding standard input , output and error 
+- Redirecting output to the screen and file 
+
+103. 5 Create , Monitor and kill process 
+- Reviewing the state of the sytem 
+- Monitoring process 
+- Keep a process running 
+
+103.6 Modify Process Execution Prioritoes
+- Understanding and changing process priorities 
+
+103. 7 Search text files using regular expression 
+- Introduction to regular expression 
+- Using regular expression tools 
+- Working with Basic regualr expression 
+
+103.8 Perform Basic File editing in VI 
+- Using the Vi/ Vim Text editor 
+-Creating and modyfying a file with vim 
+- Searching text files and performing basic file edit operation 
+
+104.1 Create partition and FIlesystems 
+-Legacy MBR partitions
+- GPT partitions
+-SWAP partitions
+-Creating Linux file systems
+
+104.2 Maintain the integrity of filesystems 
+- Disk space usage 
+- Maintaining a file system 
+
+104.3 Control Mounting and unmounting of filesystems 
+- Understadning Mount points
+- Mount and unmount filesystems
+- Adding a new Hard disk to linux systems
+
+104.5 Manage File permission and ownership 
+- Basic File and folder permissions 
+- Modify basic access modes
+- Modify advanced permissions
+- Default folder permissions
+-Manageing file attributes and permission
+
+104.6 Create and change hard and soft links
+- Understanding the Links 
+-working with Links 
+
+104.7 Find system files and place in the correct location 
+- File system hierrachy standard 
+- Finding commands on a linux system 
+- Linux permissions and the FHS .
+
+105.1 Customize and use the shell environment 
+- Setting up the shell environemnt 
+- Customizing the shell environment 
+- Modyfying the bash shell
+
+105.2 Customize or write simple scripts
+- Basic Shell Scripts
+- Adding logic to your shell script
+- Bash loops and sequences
+
+106.1 Install and configure x11
+-The basic of X11 
+-Installing x 11
+- X11 Configuration 
+- Remote Graphical Connections
+
+106.2 Graphical Desktops
+- The primary linux desktop environemnts
+
+106.3 Accessibility 
+- accessibility of the linux Desktop
+
+107.1 Manage users and group accounts and related system files 
+- Adding and removing users
+-adding and removing groups
+-users and group configuration files
+- Users and groups modifications 
+
+107.2 Automate system administrating tasks by scheduling jobs
+- Cron
+- At 
+- Systemd Timber Unit files
+- Scheduling a systemd service job with timber units
+
+107.3 Localisation and internationalisation 
+- Wokring sith systems locale
+-time and date on the linux system 
+
+108.1 Maintian Sytem time
+-Working with Remote time servers
+
+108.2 Sytem logging
+- Legacy Loging systems
+-Rsyslog
+-Introduction to systemd journal
+-journalctl
+- Working with system service log files using journal control
+
+108.3 Mail Transfer Agent (MTA) Basic 
+- Basic of message transfer agent 
+- Email Forwarding and aliases
+-Set up Local email forwarding 
+
+108.4 Manage printers and printing 
+-The Common unix printing systems (CUPS)
+-The line print deamon 
+-Working with CUPS print server 
+
+109.1 Fundamental of Internet Protools
+- Networking fundamentals
+-Common netwokring services 
+
+109.2 Persistent Network configuration 
+- Network Manager
+- Legacy Networking Tools 
+
+109.3 Basic Network troubleshooting 
+- Testing connectivity 
+- Monitoring Network Access 
+
+109.4 Configure Client-Side DNS
+- Basic of DNS resolution from linux 
+- Testing DNS resolution 
+
+110.1 Perfom security Adminstration Tasks 
+- Dtermine the Current security of a system 
+- Checking Local Network Security 
+- Create New sudo Users 
+
+110.2 Set up Host Secuirty 
+- Securing Local Logins
+-Securing Network Services
+- Host security with TCP wrappers and systemd Sockets
+
+110.3 Securing Data with Encryption 
+- GPG
+-SSH
+-Encrypt a file using GPG 
+- Generating and exchange SSH keys for secure access 

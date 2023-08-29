@@ -18,6 +18,11 @@ e29e7625-6fec-4287-9495-8c1ea470ebcd
 ```
 https://developer.hashicorp.com/terraform/tutorials/docker-get-started/install-cli
 ```
+
+## Lynis secuirty audit 
+```
+https://www.tecmint.com/linux-security-auditing-and-scanning-with-lynis-tool/
+```
 ## NGINX server in less than a minute using Docker
 ```
 https://developer.hashicorp.com/terraform/tutorials/docker-get-started/install-cli

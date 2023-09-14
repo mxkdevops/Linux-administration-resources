@@ -235,7 +235,7 @@ wget http://domain.com/file
 # Display listening tcp and udp ports and corresponding programs
 netstat -nutlp
 ```
-# 9
+# 9 Compress file and backup 
 ```
 # Create tar named archive.tar containing directory.
 tar cf archive.tar directory

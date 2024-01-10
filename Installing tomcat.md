@@ -130,6 +130,17 @@ Log in with the username and password you completed on Step 5: Add an admin User
 You should be able to log in and manage the Tomcat installation.
 
 
+add new line on 10/1/2024
+
+here is nw
+
+hi ]
+
+
+djlfssa
+ad;joa;jdj;d;j
+
+
 
 
 
